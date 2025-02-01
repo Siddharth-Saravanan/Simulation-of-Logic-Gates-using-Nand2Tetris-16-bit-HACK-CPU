@@ -1,0 +1,54 @@
+class CChip_UI {
+    field String c;
+    field Design border;
+    field C_Description des;
+    field Comb_Simulate cd;
+    constructor CChip_UI new(String s) {
+	do Screen.clearScreen();
+        let border = Design.new();
+        do border.dispose();
+        let c = s;
+        do chipMenu();
+        do run();
+        return this;
+    }
+
+    method void run() {
+	var char key;
+
+        while (key=0) {
+	    let key = Keyboard.keyPressed();
+        }
+
+	if (key=65) { let des = C_Description.new(c);}
+        if (key=66) { let cd = Comb_Simulate.new(c);}
+
+	while (~(key=0)) {
+	   let key = Keyboard.keyPressed();
+	}
+	return;
+    }
+
+    method void chipMenu() {
+        do Output.moveCursor(4,27);
+        do Output.printString(c);
+
+        do Output.moveCursor(10,22);
+        do Output.printString("a) DESCRIPTION ");
+        //do Output.moveCursor(10,32);
+        //do Output.printString("b) BLOCK/CHIP DIAGRAM ");
+        do Output.moveCursor(14,22);
+        do Output.printString("b) SIMULATION");
+        //do Output.moveCursor(14,32);
+        //do Output.printString("d) SIMULATION ");
+
+        return;
+    }
+
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+	return;    
+    }
+
+}

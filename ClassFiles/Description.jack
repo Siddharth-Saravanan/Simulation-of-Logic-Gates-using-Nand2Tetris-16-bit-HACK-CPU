@@ -1,0 +1,484 @@
+class Description {
+    field Design border;
+    field String c;
+    constructor Description new(String s) {
+        do Screen.clearScreen();
+        let border = Design.new();
+        do border.dispose();
+        let c = s;
+        do selectChip();
+        return this;
+    }
+
+
+   
+    method void selectChip() {
+        //var char c1;
+        do Output.moveCursor(4,27);
+        do Output.printString(c);
+
+        do Output.moveCursor(8,4);
+        do Output.printString("OVERVIEW");
+        do Screen.drawLine(32,100,94,100);
+
+        do Output.moveCursor(8,40);
+        do Output.printString("TRUTH TABLE");
+        do Screen.drawLine(320,100,407,100);
+        //let c = c.appendChar(c1);
+        //let c = c.appendChar(32);
+
+        
+        if ((c.charAt(0)=78) & (c.charAt(1)=65) & (c.charAt(2)=78) & (c.charAt(3)=68)) {
+
+            do Output.moveCursor(11,4);
+            do Output.printString("->NAND is an universal gate");
+            do Output.moveCursor(12,4);
+            do Output.printString("  used to build other primitive");
+            do Output.moveCursor(13,4);
+            do Output.printString("  and composite gates.");
+
+            do Output.moveCursor(15,4);
+            do Output.printString("->Returns false if both inputs");
+            do Output.moveCursor(16,4);
+            do Output.printString("  are true; Returns true for");
+            do Output.moveCursor(17,4);
+            do Output.printString("  other three combinations.");
+
+            do Output.moveCursor(19,4);
+            do Output.printString("->Boolean expression:");
+            do Output.moveCursor(21,4);
+            do Output.printString("  Y = A.B");
+            do Screen.drawLine(78,230,103,230);
+
+            do Output.moveCursor(11,42);
+            do Output.printChar(65);
+            do Output.moveCursor(11,47);
+            do Output.printChar(66);
+            do Output.moveCursor(11,52);
+            do Output.printChar(89);
+
+            do Output.moveCursor(13,42);
+            do Output.printInt(0);
+            do Output.moveCursor(15,42);
+            do Output.printInt(0);
+            do Output.moveCursor(17,42);
+            do Output.printInt(1);
+            do Output.moveCursor(19,42);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,47);
+            do Output.printInt(0);
+            do Output.moveCursor(15,47);
+            do Output.printInt(1);
+            do Output.moveCursor(17,47);
+            do Output.printInt(0);
+            do Output.moveCursor(19,47);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,52);
+            do Output.printInt(1);
+            do Output.moveCursor(15,52);
+            do Output.printInt(1);
+            do Output.moveCursor(17,52);
+            do Output.printInt(1);
+            do Output.moveCursor(19,52);
+            do Output.printInt(0);
+	}
+
+	if ((c.charAt(0)=65) & (c.charAt(1)=78) & (c.charAt(2)=68)) {
+            do Output.moveCursor(11,4);
+            do Output.printString("->AND is a primitive gate which");
+            do Output.moveCursor(12,4);
+            do Output.printString("  returns true if both inputs");
+            do Output.moveCursor(13,4);
+            do Output.printString("  are true. Else, returns false");
+            do Output.moveCursor(14,4);
+            do Output.printString("  for other three combinations.");
+
+
+            do Output.moveCursor(16,4);
+            do Output.printString("->Boolean expression:");
+            do Output.moveCursor(18,4);
+            do Output.printString("  Y = A.B");
+
+            do Output.moveCursor(11,42);
+            do Output.printChar(65);
+            do Output.moveCursor(11,47);
+            do Output.printChar(66);
+            do Output.moveCursor(11,52);
+            do Output.printChar(89);
+
+            do Output.moveCursor(13,42);
+            do Output.printInt(0);
+            do Output.moveCursor(15,42);
+            do Output.printInt(0);
+            do Output.moveCursor(17,42);
+            do Output.printInt(1);
+            do Output.moveCursor(19,42);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,47);
+            do Output.printInt(0);
+            do Output.moveCursor(15,47);
+            do Output.printInt(1);
+            do Output.moveCursor(17,47);
+            do Output.printInt(0);
+            do Output.moveCursor(19,47);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,52);
+            do Output.printInt(0);
+            do Output.moveCursor(15,52);
+            do Output.printInt(0);
+            do Output.moveCursor(17,52);
+            do Output.printInt(0);
+            do Output.moveCursor(19,52);
+            do Output.printInt(1);	
+        }
+
+	if ((c.charAt(0)=79) & (c.charAt(1)=82)) {
+            do Output.moveCursor(11,4);
+            do Output.printString("->OR is a primitive gate which");
+            do Output.moveCursor(12,4);
+            do Output.printString("  returns true if either one");
+            do Output.moveCursor(13,4);
+            do Output.printString("  input is true. Else, returns");
+            do Output.moveCursor(14,4);
+            do Output.printString("  false.");
+
+
+            do Output.moveCursor(16,4);
+            do Output.printString("->Boolean expression:");
+            do Output.moveCursor(18,4);
+            do Output.printString("  Y = A+B");
+
+            do Output.moveCursor(11,42);
+            do Output.printChar(65);
+            do Output.moveCursor(11,47);
+            do Output.printChar(66);
+            do Output.moveCursor(11,52);
+            do Output.printChar(89);
+
+            do Output.moveCursor(13,42);
+            do Output.printInt(0);
+            do Output.moveCursor(15,42);
+            do Output.printInt(0);
+            do Output.moveCursor(17,42);
+            do Output.printInt(1);
+            do Output.moveCursor(19,42);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,47);
+            do Output.printInt(0);
+            do Output.moveCursor(15,47);
+            do Output.printInt(1);
+            do Output.moveCursor(17,47);
+            do Output.printInt(0);
+            do Output.moveCursor(19,47);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,52);
+            do Output.printInt(0);
+            do Output.moveCursor(15,52);
+            do Output.printInt(1);
+            do Output.moveCursor(17,52);
+            do Output.printInt(1);
+            do Output.moveCursor(19,52);
+            do Output.printInt(1);
+        }
+
+	if ((c.charAt(0)=78) & (c.charAt(1)=79) & (c.charAt(2)=84)) {
+            do Output.moveCursor(11,4);
+            do Output.printString("->NOT is a primitive gate which");
+            do Output.moveCursor(12,4);
+            do Output.printString("  returns the compliment of");
+            do Output.moveCursor(13,4);
+            do Output.printString("  given input");
+
+            do Output.moveCursor(16,4);
+            do Output.printString("->Boolean expression:");
+            do Output.moveCursor(18,4);
+            do Output.printString("  Y = A");
+            do Screen.drawLine(79,197,86,197);
+
+            do Output.moveCursor(11,42);
+            do Output.printChar(65);
+            do Output.moveCursor(11,47);
+            do Output.printChar(89);
+
+
+            do Output.moveCursor(13,42);
+            do Output.printInt(0);
+            do Output.moveCursor(15,42);
+            do Output.printInt(1);
+
+
+            do Output.moveCursor(13,47);
+            do Output.printInt(1);
+            do Output.moveCursor(15,47);
+            do Output.printInt(0);
+            
+        }
+
+	if ((c.charAt(0)=88) & (c.charAt(1)=79) & (c.charAt(2)=82)) {
+            do Output.moveCursor(11,4);
+            do Output.printString("->XOR is a special gate which");
+            do Output.moveCursor(12,4);
+            do Output.printString("  returns true if only one");
+            do Output.moveCursor(13,4);
+            do Output.printString("  input is true. Else, returns");
+            do Output.moveCursor(14,4);
+            do Output.printString("  false.");
+
+
+            do Output.moveCursor(16,4);
+            do Output.printString("->Boolean expression:");
+            do Output.moveCursor(18,4);
+            do Output.printString("  Y = AB + AB");
+	    do Screen.drawLine(79,197,86,197);
+            do Screen.drawLine(127,197,134,197);
+
+            do Output.moveCursor(11,42);
+            do Output.printChar(65);
+            do Output.moveCursor(11,47);
+            do Output.printChar(66);
+            do Output.moveCursor(11,52);
+            do Output.printChar(89);
+
+            do Output.moveCursor(13,42);
+            do Output.printInt(0);
+            do Output.moveCursor(15,42);
+            do Output.printInt(0);
+            do Output.moveCursor(17,42);
+            do Output.printInt(1);
+            do Output.moveCursor(19,42);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,47);
+            do Output.printInt(0);
+            do Output.moveCursor(15,47);
+            do Output.printInt(1);
+            do Output.moveCursor(17,47);
+            do Output.printInt(0);
+            do Output.moveCursor(19,47);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,52);
+            do Output.printInt(0);
+            do Output.moveCursor(15,52);
+            do Output.printInt(1);
+            do Output.moveCursor(17,52);
+            do Output.printInt(1);
+            do Output.moveCursor(19,52);
+            do Output.printInt(0);            
+        }
+
+	if ((c.charAt(0)=78) & (c.charAt(1)=79) & (c.charAt(2)=82)) { // NOR
+            do Output.moveCursor(11,4);
+            do Output.printString("->NOR is a special gate which");
+            do Output.moveCursor(12,4);
+            do Output.printString("  returns the compliment");
+            do Output.moveCursor(13,4);
+            do Output.printString("  output of OR Gate");
+
+
+
+            do Output.moveCursor(16,4);
+            do Output.printString("->Boolean expression:");
+            do Output.moveCursor(18,4);
+            do Output.printString("  Y = A+B");
+	    do Screen.drawLine(79,197,103,197);
+
+            do Output.moveCursor(11,42);
+            do Output.printChar(65);
+            do Output.moveCursor(11,47);
+            do Output.printChar(66);
+            do Output.moveCursor(11,52);
+            do Output.printChar(89);
+
+            do Output.moveCursor(13,42);
+            do Output.printInt(0);
+            do Output.moveCursor(15,42);
+            do Output.printInt(0);
+            do Output.moveCursor(17,42);
+            do Output.printInt(1);
+            do Output.moveCursor(19,42);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,47);
+            do Output.printInt(0);
+            do Output.moveCursor(15,47);
+            do Output.printInt(1);
+            do Output.moveCursor(17,47);
+            do Output.printInt(0);
+            do Output.moveCursor(19,47);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,52);
+            do Output.printInt(1);
+            do Output.moveCursor(15,52);
+            do Output.printInt(0);
+            do Output.moveCursor(17,52);
+            do Output.printInt(0);
+            do Output.moveCursor(19,52);
+            do Output.printInt(0);
+        }
+
+	if ((c.charAt(0)=77) & (c.charAt(1)=85) & (c.charAt(2)=88)) { //MUX
+            do Output.moveCursor(11,4);
+            do Output.printString("->MUX is a special gate which");
+            do Output.moveCursor(12,4);
+            do Output.printString("  returns the output (A or B)");
+            do Output.moveCursor(13,4);
+            do Output.printString("  based on select bit value");
+
+            do Output.moveCursor(15,4);
+            do Output.printString("->If select = 0, output = A");
+            do Output.moveCursor(16,4);
+            do Output.printString("     select = 1, output = B");
+
+
+            do Output.moveCursor(18,4);
+            do Output.printString("->Boolean expression:");
+            do Output.moveCursor(20,4);
+            do Output.printString("  Y = BS0 + S0A");
+	    do Screen.drawLine(127,219,141,219);
+
+            do Output.moveCursor(10,42);
+            do Output.printChar(65);
+            do Output.moveCursor(10,47);
+            do Output.printChar(66);
+            do Output.moveCursor(10,52);
+            do Output.printString("sel");
+            
+            do Output.moveCursor(10,57);
+            do Output.printChar(89);
+
+            do Output.moveCursor(11,42);
+            do Output.printInt(0);
+            do Output.moveCursor(13,42);
+            do Output.printInt(0);
+            do Output.moveCursor(15,42);
+            do Output.printInt(0);
+            do Output.moveCursor(17,42);
+            do Output.printInt(1);
+            do Output.moveCursor(19,42);
+            do Output.printInt(1);
+            do Output.moveCursor(21,42);
+            do Output.printInt(1);
+
+            do Output.moveCursor(11,47);
+            do Output.printInt(0);
+            do Output.moveCursor(13,47);
+            do Output.printInt(1);
+            do Output.moveCursor(15,47);
+            do Output.printInt(1);
+            do Output.moveCursor(17,47);
+            do Output.printInt(0);
+            do Output.moveCursor(19,47);
+            do Output.printInt(0);
+            do Output.moveCursor(21,47);
+            do Output.printInt(1);
+
+            do Output.moveCursor(11,52);
+            do Output.printChar(88);
+            do Output.moveCursor(13,52);
+            do Output.printInt(0);
+            do Output.moveCursor(15,52);
+            do Output.printInt(1);
+            do Output.moveCursor(17,52);
+            do Output.printInt(0);
+            do Output.moveCursor(19,52);
+            do Output.printInt(1);
+            do Output.moveCursor(21,52);
+            do Output.printChar(88);
+
+            do Output.moveCursor(11,57);
+            do Output.printInt(0);
+            do Output.moveCursor(13,57);
+            do Output.printInt(0);
+            do Output.moveCursor(15,57);
+            do Output.printInt(1);
+            do Output.moveCursor(17,57);
+            do Output.printInt(1);
+            do Output.moveCursor(19,57);
+            do Output.printInt(0);
+            do Output.moveCursor(21,57);
+            do Output.printInt(1);
+        }
+
+	if ((c.charAt(0)=68) & (c.charAt(1)=69) & (c.charAt(2)=77) & (c.charAt(3)=85) & (c.charAt(4)=88)){
+	    do Output.moveCursor(11,4);
+            do Output.printString("->DEMUX is a special gate");
+            do Output.moveCursor(12,4);
+            do Output.printString("  which returns two outputs");
+            do Output.moveCursor(13,4);
+            do Output.printString("  A and B based on select bit");
+
+            do Output.moveCursor(16,4);
+            do Output.printString("->If sel=0; a=in, b=0");
+            do Output.moveCursor(17,4);
+            do Output.printString("     sel=1; a=0, b=in");
+
+/*
+            do Output.moveCursor(18,4);
+            do Output.printString("->Boolean expression:");
+            do Output.moveCursor(20,4);
+            do Output.printString("  Y = A+B");
+	    do Screen.drawLine(79,197,103,197);
+*/
+            do Output.moveCursor(11,42);
+            do Output.printString("in");
+            do Output.moveCursor(11,47);
+            do Output.printString("sel");
+            do Output.moveCursor(11,52);
+            do Output.printChar(65);
+            do Output.moveCursor(11,57);
+            do Output.printChar(66);
+
+            do Output.moveCursor(13,42);
+            do Output.printInt(0);
+            do Output.moveCursor(15,42);
+            do Output.printInt(0);
+            do Output.moveCursor(17,42);
+            do Output.printInt(1);
+            do Output.moveCursor(19,42);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,47);
+            do Output.printInt(0);
+            do Output.moveCursor(15,47);
+            do Output.printInt(1);
+            do Output.moveCursor(17,47);
+            do Output.printInt(0);
+            do Output.moveCursor(19,47);
+            do Output.printInt(1);
+
+            do Output.moveCursor(13,52);
+            do Output.printInt(0);
+            do Output.moveCursor(15,52);
+            do Output.printInt(0);
+            do Output.moveCursor(17,52);
+            do Output.printInt(1);
+            do Output.moveCursor(19,52);
+            do Output.printInt(0);
+
+            do Output.moveCursor(13,57);
+            do Output.printInt(0);
+            do Output.moveCursor(15,57);
+            do Output.printInt(0);
+            do Output.moveCursor(17,57);
+            do Output.printInt(0);
+            do Output.moveCursor(19,57);
+            do Output.printInt(1);            
+        }
+
+	return;
+    }
+
+
+    method void dispose() {
+	do Memory.deAlloc(this);
+	return;
+    }
+}

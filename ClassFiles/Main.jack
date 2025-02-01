@@ -1,0 +1,11 @@
+class Main {
+    function void main() {
+	var Interface UI;
+        do Interface.newInstance();
+        while(true){
+            let UI = Interface.getInstance();
+            do UI.dispose();
+            return;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+class SChip_UI {
+    field String s;
+    field Design border;
+    field S_Description des;
+    field Seq_Diagram sd;
+    constructor SChip_UI new(String s1) {
+	do Screen.clearScreen();
+        let border = Design.new();
+        do border.dispose();
+        let s = s1;
+        do chipMenu();
+        do run();
+        return this;
+    }
+
+    method void run() {
+	var char key;
+
+        while (key=0) {
+	    let key = Keyboard.keyPressed();
+        }
+
+	if (key=65) { let des = S_Description.new(s);}
+        if (key=66) { let sd = Seq_Diagram.new(s);}
+
+	while (~(key=0)) {
+	   let key = Keyboard.keyPressed();
+	}
+	return;
+    }
+
+    method void chipMenu() {
+        do Output.moveCursor(4,27);
+        do Output.printString(s);
+
+        do Output.moveCursor(10,22);
+        do Output.printString("a) DESCRIPTION ");
+        do Output.moveCursor(14,22);
+        do Output.printString("b) BLOCK DIAGRAM");
+	return;
+    }
+
+    method void dispose() {
+	do Memory.deAlloc(this);
+	return;
+    }
+
+}

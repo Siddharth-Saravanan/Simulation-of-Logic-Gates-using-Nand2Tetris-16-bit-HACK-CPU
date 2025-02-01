@@ -1,0 +1,74 @@
+class Sequential_UI {
+    field Design border;
+    field String chip;
+    field SChip_UI SG;
+
+    constructor Sequential_UI new() {
+	do Screen.clearScreen();
+	let border = Design.new();
+        do border.dispose();
+        do dispMenu();
+        do run();
+	return this;
+    }
+
+    method void navigateMenu() {
+	let SG = SChip_UI.new(chip);
+	return;
+    }
+
+    method void run() {
+        var char key;
+
+        while (key=0) {
+	    let key = Keyboard.keyPressed();
+	}
+
+        if (key = 65) { let chip = "BIT     ";}
+        if (key = 66) { let chip = "REGISTER";}
+	if (key = 67) { let chip = "RAM8    ";}
+	if (key = 68) { let chip = "RAM64   ";}
+	if (key = 69) { let chip = "RAM512  ";}
+        if (key = 70) { let chip = "RAM4K   ";}
+        if (key = 71) { let chip = "RAM16K  ";}
+        if (key = 72) { let chip = "PC      ";}
+
+        while (~(key=0)) {
+	    let key = Keyboard.keyPressed();
+	}
+        do navigateMenu();
+        return;
+    }
+
+    method void dispMenu() {
+        do Output.moveCursor(4,20);
+        do Output.printString(" SEQUENTIAL CIRCUITS ");
+
+        do Output.moveCursor(9,15);
+        do Output.printString("a) BIT ");
+        do Output.moveCursor(12,15);
+        do Output.printString("b) REGISTER ");
+        do Output.moveCursor(15,15);
+        do Output.printString("c) RAM8 ");
+        do Output.moveCursor(18,15);
+        do Output.printString("d) RAM64 ");
+
+        do Output.moveCursor(9,35);
+        do Output.printString("e) RAM512 ");
+        do Output.moveCursor(12,35);
+        do Output.printString("f) RAM4K ");
+        do Output.moveCursor(15,35);
+        do Output.printString("g) RAM16K ");
+        do Output.moveCursor(18,35);
+        do Output.printString("h) PC ");
+
+        return;
+
+    }
+
+    method void dispose() {
+	do Memory.deAlloc(this);
+	return;
+    }
+    
+}

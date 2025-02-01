@@ -1,0 +1,324 @@
+function Comb_Simulate.new 0
+push constant 2
+call Memory.alloc 1
+pop pointer 0
+call Screen.clearScreen 0
+pop temp 0
+call Design.new 0
+pop this 1
+push this 1
+call Design.dispose 1
+pop temp 0
+push argument 0
+pop this 0
+push pointer 0
+call Comb_Simulate.run 1
+pop temp 0
+push pointer 0
+return
+function Comb_Simulate.run 0
+push argument 0
+pop pointer 0
+push constant 4
+push constant 27
+call Output.moveCursor 2
+pop temp 0
+push this 0
+call Output.printString 1
+pop temp 0
+push this 0
+push constant 0
+call String.charAt 2
+push constant 78
+eq
+push this 0
+push constant 1
+call String.charAt 2
+push constant 65
+eq
+and
+push this 0
+push constant 2
+call String.charAt 2
+push constant 78
+eq
+and
+push this 0
+push constant 3
+call String.charAt 2
+push constant 68
+eq
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call Comb_Simulate.drawNAND 1
+pop temp 0
+label IF_FALSE0
+push this 0
+push constant 0
+call String.charAt 2
+push constant 65
+eq
+push this 0
+push constant 1
+call String.charAt 2
+push constant 78
+eq
+and
+push this 0
+push constant 2
+call String.charAt 2
+push constant 68
+eq
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+call Comb_Simulate.drawAND 1
+pop temp 0
+label IF_FALSE1
+push this 0
+push constant 0
+call String.charAt 2
+push constant 79
+eq
+push this 0
+push constant 1
+call String.charAt 2
+push constant 82
+eq
+and
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push pointer 0
+call Comb_Simulate.drawOR 1
+pop temp 0
+label IF_FALSE2
+push this 0
+push constant 0
+call String.charAt 2
+push constant 78
+eq
+push this 0
+push constant 1
+call String.charAt 2
+push constant 79
+eq
+and
+push this 0
+push constant 2
+call String.charAt 2
+push constant 84
+eq
+and
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push pointer 0
+call Comb_Simulate.drawNOT 1
+pop temp 0
+label IF_FALSE3
+push this 0
+push constant 0
+call String.charAt 2
+push constant 88
+eq
+push this 0
+push constant 1
+call String.charAt 2
+push constant 79
+eq
+and
+push this 0
+push constant 2
+call String.charAt 2
+push constant 82
+eq
+and
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push pointer 0
+call Comb_Simulate.drawXOR 1
+pop temp 0
+label IF_FALSE4
+push this 0
+push constant 0
+call String.charAt 2
+push constant 78
+eq
+push this 0
+push constant 1
+call String.charAt 2
+push constant 79
+eq
+and
+push this 0
+push constant 2
+call String.charAt 2
+push constant 82
+eq
+and
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push pointer 0
+call Comb_Simulate.drawNOR 1
+pop temp 0
+label IF_FALSE5
+push this 0
+push constant 0
+call String.charAt 2
+push constant 77
+eq
+push this 0
+push constant 1
+call String.charAt 2
+push constant 85
+eq
+and
+push this 0
+push constant 2
+call String.charAt 2
+push constant 88
+eq
+and
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push pointer 0
+call Comb_Simulate.drawMUX 1
+pop temp 0
+label IF_FALSE6
+push this 0
+push constant 0
+call String.charAt 2
+push constant 68
+eq
+push this 0
+push constant 1
+call String.charAt 2
+push constant 69
+eq
+and
+push this 0
+push constant 2
+call String.charAt 2
+push constant 77
+eq
+and
+push this 0
+push constant 3
+call String.charAt 2
+push constant 85
+eq
+and
+push this 0
+push constant 4
+call String.charAt 2
+push constant 88
+eq
+and
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push pointer 0
+call Comb_Simulate.drawDMUX 1
+pop temp 0
+label IF_FALSE7
+push constant 0
+return
+function Comb_Simulate.drawNAND 0
+push argument 0
+pop pointer 0
+push constant 0
+return
+function Comb_Simulate.drawAND 0
+push argument 0
+pop pointer 0
+push constant 0
+return
+function Comb_Simulate.drawOR 0
+push argument 0
+pop pointer 0
+push constant 150
+push constant 210
+push constant 175
+push constant 140
+call Screen.drawLine 4
+pop temp 0
+push constant 175
+push constant 140
+push constant 150
+push constant 60
+call Screen.drawLine 4
+pop temp 0
+push constant 150
+push constant 60
+push constant 250
+push constant 140
+call Screen.drawLine 4
+pop temp 0
+push constant 150
+push constant 210
+push constant 250
+push constant 140
+call Screen.drawLine 4
+pop temp 0
+push constant 250
+push constant 140
+push constant 300
+push constant 140
+call Screen.drawLine 4
+pop temp 0
+push constant 100
+push constant 160
+push constant 160
+push constant 160
+call Screen.drawLine 4
+pop temp 0
+push constant 100
+push constant 110
+push constant 160
+push constant 110
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Comb_Simulate.drawNOT 0
+push argument 0
+pop pointer 0
+push constant 0
+return
+function Comb_Simulate.drawXOR 0
+push argument 0
+pop pointer 0
+push constant 0
+return
+function Comb_Simulate.drawNOR 0
+push argument 0
+pop pointer 0
+push constant 0
+return
+function Comb_Simulate.drawMUX 0
+push argument 0
+pop pointer 0
+push constant 0
+return
+function Comb_Simulate.drawDMUX 0
+push argument 0
+pop pointer 0
+push constant 0
+return
+function Comb_Simulate.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

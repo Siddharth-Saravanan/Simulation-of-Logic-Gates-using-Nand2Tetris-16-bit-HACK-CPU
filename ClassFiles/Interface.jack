@@ -1,0 +1,107 @@
+class Interface {
+    field Design border;
+    field Combinational_UI comb;
+    field Sequential_UI seq;
+    static Interface instance;
+    field int keypad;
+    constructor Interface new() {
+        do Screen.clearScreen();
+	let border = Design.new();
+        do mainMenu();
+        do run();
+        return this;
+    }
+
+    method void navigateMenu() {
+       if (keypad = 1) {
+           let comb = Combinational_UI.new(); 
+       }
+       if (keypad = 2) { 
+           let seq = Sequential_UI.new();
+       }
+       if (keypad = 3) { 
+           do credits();
+       }
+       return;
+    }
+
+    method void run() {
+        var char key;
+
+        while (key=0) {
+	    let key = Keyboard.keyPressed();
+        }
+        
+        if (key = 49)  { let keypad = 1 ; }
+        if (key = 50)  { let keypad = 2 ; }
+        if (key = 51)  { let keypad = 3 ; }
+
+        if (key = 52)  {
+            do Screen.clearScreen(); 
+        }
+        while (~(key=0)) {
+	    let key = Keyboard.keyPressed();
+	}
+        do navigateMenu();
+        return;
+    }
+
+//let comb = Combinational_UI.new();
+//let seq = Sequential_UI.new();
+
+    method void mainMenu() {
+        do Output.moveCursor(4,4);
+        do Output.printString(" DEMONSTRATION OF COMBINATIONAL AND SEQUENTIAL CIRCUITS ");
+
+        do Output.moveCursor(10,15);
+        do Output.printString("1) COMBINATIONAL CIRCUITS ");
+        
+        do Output.moveCursor(13,15);
+        do Output.printString("2) SEQUENTIAL CIRCUITS ");
+        
+        do Output.moveCursor(16,15);
+        do Output.printString("3) CREDITS ");
+
+        do Output.moveCursor(19,15);
+        do Output.printString("4) EXIT ");
+        return;
+    }
+
+    method void credits() {
+	do Screen.clearScreen();
+        let border = Design.new();
+        do Output.moveCursor(4,4);
+        do Output.printString(" DONE BY TEAM-3 ");
+
+        do Output.moveCursor(7,15);
+        do Output.printString("1) AKASHVARMA M ");
+
+        do Output.moveCursor(10,15);
+        do Output.printString("2) GAJULA YASHASWINI NAGA SAI ");
+        
+        do Output.moveCursor(13,15);
+        do Output.printString("3) KEERTHANA E ");
+        
+        do Output.moveCursor(16,15);
+        do Output.printString("4) SIDDHARTH S ");
+
+        do Output.moveCursor(19,15);
+        do Output.printString("5) VISHNU K.P ");
+        return;
+    }
+
+    method void dispose() {
+        do border.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    function void newInstance() {
+        let instance = Interface.new();
+        return;
+    }
+
+    function Interface getInstance() {
+	return instance;
+    }
+}

@@ -1,0 +1,97 @@
+class Comb_Simulate {
+    field String c;
+    field Design border;
+    
+    constructor Comb_Simulate new(String s) {
+	do Screen.clearScreen();
+        let border = Design.new();
+        do border.dispose();
+	let c = s;
+	do run();
+        return this;
+    }
+
+    method void run() {
+	do Output.moveCursor(4,27);
+        do Output.printString(c);
+        
+
+	if ((c.charAt(0)=78) & (c.charAt(1)=65) & (c.charAt(2)=78) & (c.charAt(3)=68)) {
+	    do drawNAND();
+        }
+
+	if ((c.charAt(0)=65) & (c.charAt(1)=78) & (c.charAt(2)=68)) {
+	    do drawAND();
+	}
+
+	if ((c.charAt(0)=79) & (c.charAt(1)=82)) {
+	    do drawOR();
+	}
+
+	if ((c.charAt(0)=78) & (c.charAt(1)=79) & (c.charAt(2)=84)) {
+	    do drawNOT();
+	}
+
+	if ((c.charAt(0)=88) & (c.charAt(1)=79) & (c.charAt(2)=82)) {
+	    do drawXOR();
+	}
+
+	if ((c.charAt(0)=78) & (c.charAt(1)=79) & (c.charAt(2)=82)) {
+	    do drawNOR();
+	}
+
+	if ((c.charAt(0)=77) & (c.charAt(1)=85) & (c.charAt(2)=88)) {
+	    do drawMUX();
+	}
+
+	if ((c.charAt(0)=68) & (c.charAt(1)=69) & (c.charAt(2)=77) & (c.charAt(3)=85) & (c.charAt(4)=88)) {
+	    do drawDMUX();
+	}
+	return;
+    }
+
+    method void drawNAND() {
+	return;
+    }
+
+    method void drawAND() {
+	return;
+    }
+
+    method void drawOR() {
+        do Screen.drawLine(150,210,175,140);
+        do Screen.drawLine(175,140,150,60);
+        do Screen.drawLine(150,60,250,140);
+        do Screen.drawLine(150,210,250,140);
+        do Screen.drawLine(250,140,300,140);
+        do Screen.drawLine(100,160,160,160);
+        do Screen.drawLine(100,110,160,110);
+	return;
+    }
+
+    method void drawNOT() {
+	return;
+    }
+
+    method void drawXOR() {
+	return;
+    }
+
+    method void drawNOR() {
+	return;
+    }
+
+    method void drawMUX() {
+	return;
+    }
+
+    method void drawDMUX() {
+	return;
+    }
+
+    method void dispose() {
+	do Memory.deAlloc(this);
+	return;
+    }
+
+}

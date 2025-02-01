@@ -1,0 +1,213 @@
+class S_Description {
+    field Design border;
+    field String s;
+    
+    constructor S_Description new(String s1) {
+	do Screen.clearScreen();
+        let border = Design.new();
+        do border.dispose();
+        let s = s1;
+        do selectChip();
+	return this;
+    }
+
+    method void selectChip() {
+        do Output.moveCursor(4,27);
+        do Output.printString(s);
+
+        do Output.moveCursor(8,4);
+        do Output.printString("OVERVIEW");
+        do Screen.drawLine(32,100,94,100);
+
+        if((s.charAt(0)=66) & (s.charAt(1)=73) & (s.charAt(2)=84)) {
+            do Output.moveCursor(11,4);
+            do Output.printString("->BIT is a sequential chip which stores and remembers");
+            do Output.moveCursor(12,4);
+            do Output.printString("  value over time from previous input state");
+
+            do Output.moveCursor(14,4);
+            do Output.printString("->It is designed using Data Flip Flop and a MUX chip.");
+
+            do Output.moveCursor(16,4);
+            do Output.printString("->It consists of two single bit inputs in and load and");
+            do Output.moveCursor(17,4);
+            do Output.printString("  returns a single bit output which is also fed back to");
+            do Output.moveCursor(18,4);
+            do Output.printString("  input using DFF");
+
+            do Output.moveCursor(20,4);
+            do Output.printString("->If load(t-1) then out(t)=in(t-1), else out(t)=out(t-1)");
+
+/**/	
+        }
+
+        if((s.charAt(0)=82) & (s.charAt(1)=69) & (s.charAt(2)=71) & (s.charAt(3)=73) & (s.charAt(4)=83)
+            & (s.charAt(5)=84) & (s.charAt(6)=69) & (s.charAt(7)=82)) {
+            do Output.moveCursor(11,4);
+            do Output.printString("->Register is a sequential chip which is designed");
+            do Output.moveCursor(12,4);
+            do Output.printString("  using a combination of 16-bits.");
+
+            do Output.moveCursor(14,4);
+            do Output.printString("->Its functionality is similar to Bit, instead the size");
+            do Output.moveCursor(15,4);
+            do Output.printString("  of information stored is increased to 16-bit.");
+
+            do Output.moveCursor(17,4);
+            do Output.printString("->If load(t-1) then out(t)=in(t-1), else out(t)=out(t-1).");
+
+            do Output.moveCursor(19,4);
+            do Output.printString("->These registers are further used to design composite");
+            do Output.moveCursor(20,4);
+            do Output.printString("  sequential chips such as RAM and program counter.");
+        }
+
+        if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=56)) {
+	    do Output.moveCursor(11,4);
+            do Output.printString("->RAM8 is a sequential chip which is designed");
+            do Output.moveCursor(12,4);
+            do Output.printString("  using a combination of 8-registers.");
+
+	    do Output.moveCursor(14,4);
+            do Output.printString("->It consists of a 16-bit input in, single-bit input load,");
+            do Output.moveCursor(15,4);
+            do Output.printString("  3-bit input address to return a 16-bit output from the");
+            do Output.moveCursor(16,4);
+            do Output.printString("  corresponding address location in register");
+
+
+	    do Output.moveCursor(18,4);
+            do Output.printString("->It also comprises of a Mux8Way16Bit Chip and DMux8Way");
+            do Output.moveCursor(19,4);
+            do Output.printString("  Chip to perform write and read operations respectively.");
+
+	    do Output.moveCursor(21,4);
+            do Output.printString("->If load(t-1) then RAM[address(t-1)](t)=in(t-1)");
+
+        }
+
+        if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=54) & (s.charAt(4)=52)) {
+	    do Output.moveCursor(11,4);
+            do Output.printString("->RAM64 is a sequential chip which is designed using a");
+            do Output.moveCursor(12,4);
+            do Output.printString("  combination of 8x RAM8, Mux8Way16 and DMux8Way.");
+
+	    do Output.moveCursor(14,4);
+            do Output.printString("->It consists of a 16-bit input in, single-bit input load,");
+            do Output.moveCursor(15,4);
+            do Output.printString("  6-bit input address to return a 16-bit output from the");
+            do Output.moveCursor(16,4);
+            do Output.printString("  corresponding address location in RAM8.");
+
+	    do Output.moveCursor(18,4);
+            do Output.printString("->The three most significant bits of 'address' is used to");
+            do Output.moveCursor(19,4);
+            do Output.printString("  write into or read from a specific RAM8 and the other 3.");
+	    do Output.moveCursor(20,4);
+            do Output.printString("  bits are used to write into or read from a specific");
+            do Output.moveCursor(21,4);
+            do Output.printString("  register present in specific RAM8 respectively.");
+        }
+
+        if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=53) & (s.charAt(4)=49)
+            & (s.charAt(5)=50)) {
+	    do Output.moveCursor(11,4);
+            do Output.printString("->RAM512 is a sequential chip which is designed using a");
+            do Output.moveCursor(12,4);
+            do Output.printString("  combination of 8x RAM64, Mux8Way16 and DMux8Way.");
+
+	    do Output.moveCursor(14,4);
+            do Output.printString("->It consists of a 16-bit input in, single-bit input load,");
+            do Output.moveCursor(15,4);
+            do Output.printString("  9-bit input address to return a 16-bit output from the");
+            do Output.moveCursor(16,4);
+            do Output.printString("  corresponding address location in RAM64.");
+
+	    do Output.moveCursor(18,4);
+            do Output.printString("->The three most significant bits of 'address' is used to");
+            do Output.moveCursor(19,4);
+            do Output.printString("  write into or read from a specific RAM64 and other 6");
+	    do Output.moveCursor(20,4);
+            do Output.printString("  bits are used to write into or read from a specific");
+            do Output.moveCursor(21,4);
+            do Output.printString("  register present in specific RAM64 respectively.");
+        }
+
+        if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=52) & (s.charAt(4)=75)) {
+	    do Output.moveCursor(11,4);
+            do Output.printString("->RAM4K is a sequential chip which is designed using a");
+            do Output.moveCursor(12,4);
+            do Output.printString("  combination of 8x RAM512, Mux8Way16 and DMux8Way.");
+
+	    do Output.moveCursor(14,4);
+            do Output.printString("->It consists of a 16-bit input in, single-bit input load,");
+            do Output.moveCursor(15,4);
+            do Output.printString("  12-bit input address to return a 16-bit output from the");
+            do Output.moveCursor(16,4);
+            do Output.printString("  corresponding address location in RAM512.");
+
+	    do Output.moveCursor(18,4);
+            do Output.printString("->The three most significant bits of 'address' is used to");
+            do Output.moveCursor(19,4);
+            do Output.printString("  write into or read from a specific RAM512 and other 9");
+	    do Output.moveCursor(20,4);
+            do Output.printString("  bits are used to write into or read from a specific");
+            do Output.moveCursor(21,4);
+            do Output.printString("  register present in specific RAM512 respectively.");
+        }
+
+        if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=49) & (s.charAt(4)=54)
+            & (s.charAt(5)=75)) {
+	    do Output.moveCursor(11,4);
+            do Output.printString("->RAM16K is a sequential chip which is designed using a");
+            do Output.moveCursor(12,4);
+            do Output.printString("  combination of 4x RAM4K, Mux4Way16 and DMux4Way.");
+
+	    do Output.moveCursor(14,4);
+            do Output.printString("->It consists of a 16-bit input in, single-bit input load,");
+            do Output.moveCursor(15,4);
+            do Output.printString("  14-bit input address to return a 16-bit output from the");
+            do Output.moveCursor(16,4);
+            do Output.printString("  corresponding address location in RAM4K.");
+
+	    do Output.moveCursor(18,4);
+            do Output.printString("->The two most significant bits of 'address' is used to");
+            do Output.moveCursor(19,4);
+            do Output.printString("  write into or read from a specific RAM4K and other 12");
+	    do Output.moveCursor(20,4);
+            do Output.printString("  bits are used to write into or read from a specific");
+            do Output.moveCursor(21,4);
+            do Output.printString("  register present in specific RAM4K respectively."); 
+        }
+
+        if((s.charAt(0)=80) & (s.charAt(1)=67)) {
+	    do Output.moveCursor(11,4);
+            do Output.printString("->Program Counter (PC) is a sequential chip which");
+            do Output.moveCursor(12,4);
+            do Output.printString("  computes 3 functions controlled by 3 control bits.");
+ 
+	    do Output.moveCursor(14,4);
+            do Output.printString("->reset: used to return the reset output value to 0.");
+            do Output.moveCursor(15,4);
+            do Output.printString("  load: used to return the input to the output value.");
+            do Output.moveCursor(16,4);
+            do Output.printString("  inc: used to return the incremented value to output.");
+
+            do Output.moveCursor(18,4);
+            do Output.printString("->Works under a priority logic: reset>load>inc .");
+            do Output.moveCursor(19,4);
+            do Output.printString("  if reset(t-1) == 1, out(t) = 1, else out(t)=out(t-1)");
+            do Output.moveCursor(20,4);
+            do Output.printString("  else if load(t-1) == 1, out(t) = in(t-1)");
+            do Output.moveCursor(21,4);
+            do Output.printString("  else if inc(t-1) == 1, out(t) = out(t-1) + 1");
+        }
+	return;
+
+    }
+
+    method void dispose() {
+	do Memory.deAlloc(this);
+	return;
+    }
+}

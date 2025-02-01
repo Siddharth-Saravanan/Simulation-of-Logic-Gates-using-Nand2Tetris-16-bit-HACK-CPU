@@ -1,0 +1,105 @@
+class Seq_Diagram {
+    field String s;
+    field Design border;
+    constructor Seq_Diagram new(String s1) {
+	do Screen.clearScreen();
+	let border = Design.new();
+        do border.dispose();
+        let s = s1;
+        do run();
+	return this;
+    }
+
+    method void run() {
+	do Output.moveCursor(4,27);
+        do Output.printString(s);
+	if((s.charAt(0)=66) & (s.charAt(1)=73) & (s.charAt(2)=84)) {
+	    do drawBit();
+        }
+
+        if((s.charAt(0)=82) & (s.charAt(1)=69) & (s.charAt(2)=71) & (s.charAt(3)=73) & (s.charAt(4)=83)
+            & (s.charAt(5)=84) & (s.charAt(6)=69) & (s.charAt(7)=82)) {
+	    do drawRegister();
+	}
+
+	if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=56)) {
+	    do drawRAM8();
+	}
+
+	if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=54) & (s.charAt(4)=52)) {
+	    do drawRAM64();
+	}
+
+        if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=53) & (s.charAt(4)=49)
+            & (s.charAt(5)=50)) {
+	    do drawRAM512();
+	}
+
+	if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=52) & (s.charAt(4)=75)) {
+	    do drawRAM4K();
+	}
+
+        if((s.charAt(0)=82) & (s.charAt(1)=65) & (s.charAt(2)=77) & (s.charAt(3)=49) & (s.charAt(4)=54)
+            & (s.charAt(5)=75)) {
+	    do drawRAM16K();
+	}
+
+	if((s.charAt(0)=80) & (s.charAt(1)=67)) {
+	    do drawPC();
+	}
+
+        return;
+    }
+
+    method void drawBit() {
+	return;
+    }
+
+    method void drawRegister() {
+	do Screen.drawLine(150,160,200,160);
+        do Screen.drawLine(200,185,200,135);
+        do Screen.drawLine(200,185,300,185);
+        do Screen.drawLine(200,135,300,135);
+        do Screen.drawLine(300,185,300,135);
+        do Screen.drawLine(300,160,350,160);
+        do Screen.drawLine(250,175,240,185);
+        do Screen.drawLine(250,175,260,185);
+        do Screen.drawLine(250,135,250,95);
+        do Output.moveCursor(14,16);
+        do Output.printString("in");
+        do Output.moveCursor(14,45);
+        do Output.printString("out");
+        do Output.moveCursor(8,29);
+        do Output.printString("load");        
+	return;
+    }
+
+    method void drawRAM8() {
+	return;
+    }
+
+    method void drawRAM64() {
+	return;
+    }
+
+    method void drawRAM512() {
+	return;
+    }
+
+    method void drawRAM4K() {
+	return;
+    }
+
+    method void drawRAM16K() {
+	return;
+    }
+
+    method void drawPC() {
+	return;
+    }
+
+    method void dispose() {
+	do Memory.deAlloc(this);
+	return;
+    }
+}

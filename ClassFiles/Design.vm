@@ -1,0 +1,46 @@
+function Design.new 0
+push constant 1
+call Memory.alloc 1
+pop pointer 0
+push pointer 0
+call Design.draw 1
+pop temp 0
+push pointer 0
+return
+function Design.draw 0
+push argument 0
+pop pointer 0
+push constant 11
+push constant 11
+push constant 11
+push constant 245
+call Screen.drawLine 4
+pop temp 0
+push constant 11
+push constant 11
+push constant 501
+push constant 11
+call Screen.drawLine 4
+pop temp 0
+push constant 501
+push constant 11
+push constant 501
+push constant 245
+call Screen.drawLine 4
+pop temp 0
+push constant 11
+push constant 245
+push constant 501
+push constant 245
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Design.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

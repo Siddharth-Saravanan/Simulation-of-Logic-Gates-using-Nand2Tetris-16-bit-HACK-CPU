@@ -1,0 +1,85 @@
+class Combinational_UI {
+    field Design border;
+    field Interface UI;
+    //field int keypad;
+    field String chip;
+    field CChip_UI CG; 
+    constructor Combinational_UI new() {
+        do Screen.clearScreen();
+        let border = Design.new();
+        //let chip = String.new(10);
+        do border.dispose();
+        do dispMenu();
+        do run();
+        return this;
+    }
+ 
+    method void navigateMenu() {
+	let CG = CChip_UI.new(chip);
+        return;
+    }
+   
+    method void run() {
+        var char key;
+
+        while (key=0) {
+	    let key = Keyboard.keyPressed();
+	}
+
+        if (key = 65) { let chip = "NAND ";}
+        if (key = 66) { let chip = "AND  ";}
+	if (key = 67) { let chip = "OR   ";}
+	if (key = 68) { let chip = "NOT  ";}
+	if (key = 69) { let chip = "XOR  ";}
+        if (key = 70) { let chip = "NOR  ";}
+        if (key = 71) { let chip = "MUX  ";}
+        if (key = 72) { let chip = "DEMUX";}
+
+        while (~(key=0)) {
+	    let key = Keyboard.keyPressed();
+	}
+        do navigateMenu();
+        return;
+    }
+
+
+    method void dispMenu() {
+        do Output.moveCursor(4,20);
+        do Output.printString(" COMBINATIONAL CIRCUITS ");
+
+        do Output.moveCursor(9,9);
+        do Output.printString("a) NAND ");
+        do Output.moveCursor(12,9);
+        do Output.printString("b) AND ");
+        do Output.moveCursor(15,9);
+        do Output.printString("c) OR ");
+        do Output.moveCursor(18,9);
+        do Output.printString("d) NOT ");
+
+        do Output.moveCursor(9,27);
+        do Output.printString("e) XOR ");
+        do Output.moveCursor(12,27);
+        do Output.printString("f) NOR ");
+        do Output.moveCursor(15,27);
+        do Output.printString("g) MUX ");
+        do Output.moveCursor(18,27);
+        do Output.printString("h) DEMUX ");
+
+        do Output.moveCursor(9,45);
+        do Output.printString("i) XNOR ");
+        do Output.moveCursor(12,45);
+        do Output.printString("j) HALF ADDER ");
+        do Output.moveCursor(15,45);
+        do Output.printString("k) FULL ADDER ");
+        do Output.moveCursor(18,45);
+        do Output.printString("l) ALU ");
+        return;
+
+    }
+
+    method void dispose() {
+	do Memory.deAlloc(this);
+        return;
+    }
+
+}
